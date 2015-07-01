@@ -41,15 +41,34 @@ names = pd.merge(df, biblical, how='left')
 names['biblical'].fillna('false', inplace=True)
 
 
-#5. Create a pivot table summarizing the names by year and state
-table = pd.pivot_table(names, values='births', index=['year', 'state', 'gender'],columns=['biblical'], aggfunc=np.sum)
+#5. Create a pivot tables, rename columns, add column for % and calculate %
+
+######  Define functions  #####
+#Function to rename columns
+def rename_columns(table):
+	table.columns = ['false', 'true']
+
+#Function to add column and calculate %
+def add_percent(table):
+	table['total'] = table['false'] + table['true']
+	table['%'] = (table['true'] / (table['true']+table['false'])) * 100
 
 
-#6. Rename table columns to add calculations, add total and add % Biblical
-table.columns = ['false', 'true']
-table['total'] = table['false'] + table['true']
-table["%"] = (table["true"] / (table["true"]+table["false"])) * 100
+#5A Pivot table summarizing the names by year and state
+year_gender_summary = pd.pivot_table(names, values='births', index=['year', 'state', 'gender'],columns=['biblical'], aggfunc=np.sum)
+rename_columns(year_gender_summary)
+add_percent(year_gender_summary)
 
-#Store table and names as csv	for visualization with d3.js and/or Tableau
-table.to_csv('bbnames_summary.csv')
-names.to_csv('bbnames_raw.csv')
+#5B Pivot table calculating % biblical names by state for all years
+state_summary = = pd.pivot_table(names, values='births', index='state', columns=['biblical'], aggfunc=np.sum)
+rename_columns(state_summary)
+add_percent(state_summary)
+
+
+
+
+
+#6. Store table and names as csv	for visualization with d3.js and/or Tableau
+#year_gender_summary.to_csv('bbnames_summary.csv')
+#state_summary.to_csv('state_summary.csv')
+#names.to_csv('bbnames_raw.csv')
