@@ -60,7 +60,7 @@ rename_columns(year_gender_summary)
 add_percent(year_gender_summary)
 
 #5B Pivot table calculating % biblical names by state for all years
-state_summary = = pd.pivot_table(names, values='births', index='state', columns=['biblical'], aggfunc=np.sum)
+state_summary = pd.pivot_table(names, values='births', index='state', columns=['biblical'], aggfunc=np.sum)
 rename_columns(state_summary)
 add_percent(state_summary)
 
