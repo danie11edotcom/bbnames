@@ -65,6 +65,11 @@ state_summary = pd.pivot_table(names, values='births', index='state', columns=['
 rename_columns(state_summary)
 add_percent(state_summary)
 
+#5C Pivot table summarizing % biblical names by state and gender for all years
+state_gender_summary = pd.pivot_table(names, values='births', index=['state', 'gender'], columns='biblical', aggfunc=np.sum)
+add_percent(state_gender_summary)
+#table2 = table.drop(['false', 'true'], 1)
+
 #6. Store table and names as csv	for visualization with d3.js and/or Tableau
 #year_gender_summary.to_csv('bbnames_summary.csv')
 #state_summary.to_csv('state_summary.csv')
