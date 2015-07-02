@@ -70,4 +70,7 @@ add_percent(state_summary)
 #state_summary.to_csv('state_summary.csv')
 #names.to_csv('bbnames_raw.csv')
 
-# pivot table for gender summary: table = pd.pivot_table(names, values='births', index=['state', 'gender'], columns='biblical', aggfunc=np.sum, margins=True)
+#Plan for pivot for gender summary:
+#table = pd.pivot_table(names, values='births', index=['state', 'gender'], columns='biblical', aggfunc=np.sum)
+#add_percent(table)
+#table2 = table.drop(['false', 'true'], 1)
