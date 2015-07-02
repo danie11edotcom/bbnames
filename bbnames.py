@@ -72,5 +72,6 @@ add_percent(state_gender_summary)
 
 #6. Store table and names as csv	for visualization with d3.js and/or Tableau
 #year_gender_summary.to_csv('bbnames_summary.csv')
+#state_gender_summary.to_csv('state_gender_summary.csv')
 #state_summary.to_csv('state_summary.csv')
 #names.to_csv('bbnames_raw.csv')
