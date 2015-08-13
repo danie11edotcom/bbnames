@@ -1,8 +1,3 @@
-#Python Script for Biblical Baby Names Project
-#Danielle Hill
-#danie11e.com
-#2015
-
 #Import pandas and numpy and os
 import pandas as pd
 import numpy as np
@@ -43,8 +38,6 @@ names['biblical'].fillna('false', inplace=True)
 
 #5. Create a pivot tables, rename columns, add column for % and calculate %
 
-######  Define functions  #####
-
 #Function to rename columns
 def rename_columns(table):
 	table.columns = ['false', 'true', 'total']
@@ -53,7 +46,6 @@ def rename_columns(table):
 def add_percent(table):
 	table['%'] = (table['true'] / (table['true']+table['false'])) * 100
 
-######  End define functions  #####
 
 #5A Pivot table summarizing the names by year and state
 year_gender_summary = pd.pivot_table(names, values='births', index=['year', 'state', 'gender'],columns=['biblical'], aggfunc=np.sum, margins=True)
