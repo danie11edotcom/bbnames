@@ -9,3 +9,6 @@ Tableau Public [visualization](https://public.tableau.com/profile/danielle.hill#
   - pandas
   - numpy
   -	os
+
+## Future Improvements
+- [ ] Recreate visualization using d3.js
