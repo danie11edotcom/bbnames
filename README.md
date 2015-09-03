@@ -11,5 +11,4 @@ Tableau Public [visualization](https://public.tableau.com/profile/danielle.hill#
   -	os
 
 ## Future Improvements
-- [ ] Recreate visualization using d3.js (using Github Project Page?)
-- [ ] Add a summary of analyisis results in Readme
+- [ ] Add a summary of analyisis results including d3.js visualizations using Github Project Page
