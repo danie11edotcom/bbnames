@@ -1,6 +1,6 @@
 # Biblical Baby Names
 
-Analysis of Biblical baby names by state in the US using Python
+Analysis of Biblical baby names by state in the United States using Python
 
 Tableau Public [visualization](https://public.tableau.com/profile/danielle.hill#!/vizhome/BiblicalBabyNames/Dashboard1)
 
@@ -11,4 +11,4 @@ Tableau Public [visualization](https://public.tableau.com/profile/danielle.hill#
   -	os
 
 ## Future Improvements
-- [ ] Add a summary of analyisis results including d3.js visualizations using Github Project Page
+- [ ] Add a summary of analysis results including d3.js visualizations using Github Project Page
